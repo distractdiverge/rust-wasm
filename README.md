@@ -21,7 +21,12 @@ Get the wasm toolchain
 rustup target add wasm32-unknown-unknown --toolchain nightly
 ```
 
-Install wasm-oack
+Install wasm-pack
 ```bash
 cargo install wasm-pack
+```
+
+Compile to a wasm file for consumption in the nextjs app
+```bash
+wasm-pack init
 ```
