@@ -3,8 +3,13 @@ module.exports = {
     // Fixes npm packages that depend on `fs` module
     config.node = {
       fs: 'empty'
-    }
+    };
 
-    return config
+    config.module.rules.push({
+      test: /\.wasm$/,
+      use: ['wasm-loader']
+    });
+
+    return config;
   }
-}
+};

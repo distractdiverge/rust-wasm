@@ -2,6 +2,13 @@ import Link from 'next/link'
 import Head from '../components/head'
 import Nav from '../components/nav'
 
+import wasm from 'wasm-test/wasm_test_bg.wasm'
+
+const handler = (e) => {
+  alert('test');
+  wasm.then(t => t.alert_add(3, 2));
+};
+
 export default () => (
   <div>
     <Head title="Home" />
@@ -32,6 +39,7 @@ export default () => (
             <p>Was this tool helpful? Let us know how we can improve it</p>
           </a>
         </Link>
+        <button onClick={handler}>WASM!</button>
       </div>
     </div>
 
